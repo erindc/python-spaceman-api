@@ -25,6 +25,11 @@ class GameModelTests( TestCase ):
             game = Game( word = "A1B")
             game.full_clean()
 
+    def test_word_is_capitalized( self ):
+        testWord = "testword"
+        game = Game( word = testWord )
+        self.assertEquals( testWord.upper(), game.word )
+
 
 
     ### guessed_word_state field
